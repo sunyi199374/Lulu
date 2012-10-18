@@ -3,7 +3,7 @@
 //  Lulu
 //
 //  Created by Dingzhong Weng on 6/10/12.
-//  Copyright (c) 2012 Worcester Polytechnic Institute. All rights reserved.
+//  Copyright (c) 2012 Oasislulu. All rights reserved.
 //
 
 //alarm clock at edit, icloud support, notification on all devices via icloud, local notification for alarm, customizable font size and color, swipe to forward in cell, search, recover last deletion, change color back to green,diy navigation controller,shake to switch color, tap green dot 3 times going to VIP service

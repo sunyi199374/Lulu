@@ -564,6 +564,7 @@
 				73DF2D9C1584D85E006C67C1 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		73DF2D9C1584D85E006C67C1 /* Products */ = {
 			isa = PBXGroup;
@@ -710,7 +711,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = "Worcester Polytechnic Institute";
+				ORGANIZATIONNAME = Oasislulu;
 			};
 			buildConfigurationList = 73DF2D951584D85E006C67C1 /* Build configuration list for PBXProject "Lulu" */;
 			compatibilityVersion = "Xcode 3.2";
