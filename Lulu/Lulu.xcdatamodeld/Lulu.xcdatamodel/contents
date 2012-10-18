@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1810" systemVersion="11G56" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Settings" representedClassName="Settings" syncable="YES">
+        <attribute name="firstTimeShowInDetailsView" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="firstTimeShowInFirstLevel" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="firstTimeShowInListsView" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="Todo" representedClassName="Todo" syncable="YES">
+        <attribute name="displayOrder" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="event" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="isDone" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="todolist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Todolist" inverseName="todos" inverseEntity="Todolist" syncable="YES"/>
+    </entity>
+    <entity name="Todolist" representedClassName="Todolist" syncable="YES">
+        <attribute name="alarm" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="allDone" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="onGoing" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="timeCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="timeFinished" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="todos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Todo" inverseName="todolist" inverseEntity="Todo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Settings" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Todo" positionX="367" positionY="339" width="128" height="120"/>
+        <element name="Todolist" positionX="160" positionY="192" width="128" height="135"/>
+    </elements>
+</model>

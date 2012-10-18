@@ -1,0 +1,58 @@
+/* 
+ Localizable.strings
+ Lulu
+ 
+ Created by Dingzhong Weng on 7/19/12.
+ Copyright (c) 2012 Worcester Polytechnique Institute. All rights reserved.
+ */
+
+
+/* Todo List */
+
+/* save button text */
+"saveFormat" = "保存";
+
+/* discard button text */
+"discardFormat" = "丢弃";
+
+/* cancel button text */
+"cancelFormat" = "取消";
+
+/* delete button text */
+"deleteFormat" = "删除";
+
+/* confirm button text */
+"confirmFormat" = "确认";
+
+/* revert button text */
+"revertFormat" = "还原";
+
+/* keep button text */
+"keepFormat" = "保留";
+
+/* Delete This List */
+"Delete This List" = "删除此表";
+
+/* Are you sure */
+"Are you sure?" = "确认要删除吗?";
+
+/* todo list creation time tag */
+"It is created on \n%@" = "创建于 \n%@";
+
+/* todo list finish time tag */
+"It is finished on \n%@" = "完成于 \n%@";
+
+/* todo list alarm time tag */
+"The alarm is on \n%@" = "闹钟为 \n%@";
+
+/* detail view pull letters tag */
+"pulllettersimage" = "TLPullPromptCN.png";
+
+/* detail view release letters tag */
+"releaselettersimage" = "TLReleasePromptCN.png";
+
+/* lists view cancel button tag */
+"cancelButtonImage" = "TLCancelButtonCN.png";
+
+/* lists view cancel button pressed tag */
+"cancelButtonPressedImage" = "TLCancelButtonPressedCN.png";
