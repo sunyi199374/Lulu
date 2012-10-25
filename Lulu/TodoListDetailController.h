@@ -81,6 +81,7 @@
 -(IBAction)setEdit:(id)sender;
 -(IBAction)scrollToTop:(id)sender;
 -(IBAction)scrollToBottom:(id)sender;
+
 //Miscs
 -(void)debug:(id)object orFunctionOrNil:(NSString *)function withItsStringOrNil:(NSString *)itsString;
 -(void)save:(NSManagedObject *)object;
@@ -96,6 +97,15 @@
 -(void)resetDisplayOrderFromSourceRow:(NSInteger)sourceRow ToDestinationRow:(NSInteger)destinationRow;
 -(void)listEmptyCheckAfterDeletion:(NSString*)aEvent;
 -(void)reloadTableView;
+-(void)initScrollView;
+-(void)initTitle;
+-(void)initTableView;
+-(void)initAlarm;
+-(void)initAddingView;
+-(void)initSound;
+-(void)presentGuide;
+-(void)notFirstTime;
+
 //Alarm Clock Support
 -(void)addNewAlarm;
 -(void)deleteOldAlarm;

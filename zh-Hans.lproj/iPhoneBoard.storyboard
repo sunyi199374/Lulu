@@ -93,7 +93,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="i8R-es-YbK">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="i8R-es-YbK">
                                 <rect key="frame" x="28" y="459" width="265" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -136,6 +136,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="zTb-N3-Vt5">
                                 <rect key="frame" x="122" y="16" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="debugModeSwitch:" destination="45c-0d-6GD" eventType="valueChanged" id="rIB-CQ-wSc"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ssc-R7-XqY">
                                 <rect key="frame" x="28" y="301" width="100" height="151"/>
@@ -195,19 +198,18 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="VIPBtn" destination="ssc-R7-XqY" id="Dzc-gA-wTJ"/>
                         <outlet property="aSwitch" destination="zTb-N3-Vt5" id="CmA-aS-GmX"/>
                         <outlet property="backgroundImage" destination="dhy-V2-emV" id="2K0-f3-ijt"/>
                         <outlet property="banner" destination="pWt-LX-GPE" id="W2D-JH-hKY"/>
                         <outlet property="firstApp" destination="jZf-Ya-kAG" id="J2H-cF-rBs"/>
                         <outlet property="fourthApp" destination="i8R-es-YbK" id="szt-xe-km2"/>
-                        <outlet property="lulutitle" destination="Tmx-oa-Og6" id="Nvk-hn-eQU"/>
+                        <outlet property="luluTitle" destination="Tmx-oa-Og6" id="cK6-VR-h4z"/>
                         <outlet property="password" destination="cG8-82-2nl" id="zrE-m4-Am7"/>
                         <outlet property="reference" destination="dMW-06-fRi" id="n8d-ef-K3o"/>
                         <outlet property="secondApp" destination="bIS-33-5U4" id="WF6-2r-LcB"/>
-                        <outlet property="signIn" destination="ssc-R7-XqY" id="PcR-B5-49S"/>
+                        <outlet property="signInButton" destination="ssc-R7-XqY" id="5cz-4U-1K6"/>
                         <outlet property="thirdApp" destination="ITy-Db-4c8" id="Jke-da-kJB"/>
-                        <segue destination="apD-u8-YT3" kind="custom" identifier="firstLevelSegue_0" customClass="dissolve" id="Nvo-6k-43Y"/>
+                        <segue destination="apD-u8-YT3" kind="custom" identifier="FirstLevelSegue_4" customClass="dissolve" id="Nvo-6k-43Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pL-s4-aiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,7 +224,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="TLBlurredBackUN.png" id="i0r-iO-3mK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="FLOriginalBackgroundUN.png" id="32P-XC-ZMo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="BlurringEffectUN.png" id="i0r-iO-3mK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -330,8 +336,8 @@
                         <outlet property="tableView" destination="NWN-C0-8EB" id="S1b-Zx-Suf"/>
                         <outlet property="tapBottom" destination="Oey-p0-9Ec" id="Yit-41-Akb"/>
                         <outlet property="tapTop" destination="WXE-t3-Z78" id="49J-e3-IAd"/>
-                        <segue destination="Jnm-OX-v6b" kind="modal" identifier="secondLevelSegue_2" modalTransitionStyle="coverVertical" id="5iN-uI-csL"/>
-                        <segue destination="5eO-5U-DQE" kind="custom" identifier="secondLevelSegue_1" customClass="dissolve" id="gUO-Se-OoJ"/>
+                        <segue destination="Jnm-OX-v6b" kind="modal" identifier="SecondLevelSegue_2" modalTransitionStyle="coverVertical" id="5iN-uI-csL"/>
+                        <segue destination="5eO-5U-DQE" kind="custom" identifier="SecondLevelSegue_1" customClass="Dim" id="gUO-Se-OoJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhP-KK-coi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -363,7 +369,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="TLBlurredBackUN.png" id="CPN-e0-C1E">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="FLOriginalBackgroundUN.png" id="i8Y-Kq-LHh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="BlurringEffectUN.png" id="49I-JL-peD">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -389,9 +399,6 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="CPN-e0-C1E" id="IjE-Qs-vjG"/>
-                                        </connections>
                                     </textView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="”" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" id="XV9-ZH-FTZ">
                                         <rect key="frame" x="168" y="116" width="61" height="74"/>
@@ -615,6 +622,7 @@
     <resources>
         <image name="ATapUN.png" width="50" height="50"/>
         <image name="ArrowUN.png" width="50" height="200"/>
+        <image name="BlurringEffectUN.png" width="640" height="960"/>
         <image name="FLAlarmasterEN.png" width="187" height="164"/>
         <image name="FLOriginalBackgroundUN.png" width="320" height="568"/>
         <image name="FLSaySomethingEN.png" width="356" height="164"/>
@@ -629,7 +637,6 @@
         <image name="TLAddListButtonUN.png" width="50" height="50"/>
         <image name="TLAddingNoteUN.png" width="114" height="110"/>
         <image name="TLAlarmClockUN.png" width="225" height="225"/>
-        <image name="TLBlurredBackUN.png" width="320" height="568"/>
         <image name="TLDeclineButtonUN.png" width="66" height="48"/>
         <image name="TLDeclineXUN.png" width="108" height="108"/>
         <image name="TLDeleteCN.png" width="315" height="46"/>
@@ -641,102 +648,6 @@
         <image name="TLScrollToTopCN.png" width="200" height="200"/>
         <image name="TLTitleCN.png" width="234" height="64"/>
     </resources>
-    <classes>
-        <class className="AddTodoListController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTodoListController.h"/>
-            <relationships>
-                <relationship kind="action" name="accept:"/>
-                <relationship kind="action" name="buttonTapped:"/>
-                <relationship kind="action" name="decline:"/>
-                <relationship kind="action" name="gotoNextEntry:"/>
-                <relationship kind="action" name="gotoPrevEntry:"/>
-                <relationship kind="outlet" name="BtnNext" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="BtnPrev" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="addButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="content" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="gestureRecognizer" candidateClass="UIGestureRecognizer"/>
-                <relationship kind="outlet" name="inputAccessoryView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="AutosizeTableView" superclassName="UITableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AutosizeTableView.h"/>
-        </class>
-        <class className="FirstLevelViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstLevelViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="appButtonTapped:"/>
-                <relationship kind="action" name="chooseApp:"/>
-                <relationship kind="action" name="invokeKeyboard:"/>
-                <relationship kind="action" name="resignKeyboard:"/>
-                <relationship kind="action" name="signInButtonTapped:"/>
-                <relationship kind="outlet" name="VIPBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="aSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="banner" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="firstApp" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="fourthApp" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="lulutitle" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="reference" candidateClass="UIView"/>
-                <relationship kind="outlet" name="secondApp" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="signIn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="thirdApp" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="TodoListController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TodoListController.h"/>
-            <relationships>
-                <relationship kind="action" name="accessoryButtonTappedForRowWithIndexPath:"/>
-                <relationship kind="action" name="add:"/>
-                <relationship kind="outlet" name="arrowBottom" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="arrowTop" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="guideView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="prompt" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="tapBottom" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="tapTop" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="TodoListDetailController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TodoListDetailController.h"/>
-            <relationships>
-                <relationship kind="action" name="acceptNewTodo:"/>
-                <relationship kind="action" name="cancelBtnClicked:"/>
-                <relationship kind="action" name="changeAlarm:"/>
-                <relationship kind="action" name="declineTodo:"/>
-                <relationship kind="action" name="invokeKeyboard:"/>
-                <relationship kind="action" name="resignKeyBoard:"/>
-                <relationship kind="action" name="scrollToBottom:"/>
-                <relationship kind="action" name="scrollToTop:"/>
-                <relationship kind="action" name="setButtonClicked:"/>
-                <relationship kind="action" name="setEdit:"/>
-                <relationship kind="outlet" name="addTodoBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="addingView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="alarmClock" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="alarmView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="arrow" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="deleteList" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="editButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="guideView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="leftQuo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="letters" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="prompt" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="pull" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="pullView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="rightQuo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="AutosizeTableView"/>
-                <relationship kind="outlet" name="tap" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="titleView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

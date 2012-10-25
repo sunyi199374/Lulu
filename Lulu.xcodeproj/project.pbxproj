@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3576C59516318F3F00C32E89 /* BlurringEffectUN.png in Resources */ = {isa = PBXBuildFile; fileRef = 3576C59416318F3F00C32E89 /* BlurringEffectUN.png */; };
 		35B258851628CF6A0027CB13 /* TLAlarmCancelSelectedEN.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B258841628CF690027CB13 /* TLAlarmCancelSelectedEN.png */; };
 		731190A81617894C00267CCF /* ArrowUN.png in Resources */ = {isa = PBXBuildFile; fileRef = 731190A51617894C00267CCF /* ArrowUN.png */; };
 		731190A91617894C00267CCF /* ATapUN.png in Resources */ = {isa = PBXBuildFile; fileRef = 731190A61617894C00267CCF /* ATapUN.png */; };
@@ -74,7 +75,6 @@
 		7397458D15EB4A2300442FBB /* AutosizeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7397458C15EB4A2300442FBB /* AutosizeTableView.m */; };
 		73ADB1A015E9DDE300F87A31 /* TLAddListButtonUN.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ADB19F15E9DDE300F87A31 /* TLAddListButtonUN.png */; };
 		73ADD6AB160F497500A70F43 /* FLOriginalBackgroundUN.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ADD6AA160F497500A70F43 /* FLOriginalBackgroundUN.png */; };
-		73ADD6AD160F4A3C00A70F43 /* TLBlurredBackUN.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ADD6AC160F4A3C00A70F43 /* TLBlurredBackUN.png */; };
 		73ADD6C7160FB3AC00A70F43 /* TLInfoButtonUN.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ADD6C6160FB3AC00A70F43 /* TLInfoButtonUN.png */; };
 		73ADD6DB160FE55F00A70F43 /* TapButton.aif in Resources */ = {isa = PBXBuildFile; fileRef = 73ADD6DA160FE55F00A70F43 /* TapButton.aif */; };
 		73ADD6DF160FE74400A70F43 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73ADD6DE160FE74400A70F43 /* AudioToolbox.framework */; };
@@ -95,7 +95,7 @@
 		73ADD7091610209F00A70F43 /* TLPrevUN.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ADD7031610209F00A70F43 /* TLPrevUN.png */; };
 		73ADD70A1610209F00A70F43 /* TLPrevDisabledUN.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ADD7041610209F00A70F43 /* TLPrevDisabledUN.png */; };
 		73ADD70B16102A6400A70F43 /* TodoListDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DF2E451585A40C006C67C1 /* TodoListDetailController.m */; };
-		73BDB4D315FE484400F7C1A3 /* dissolve.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BDB4D215FE484400F7C1A3 /* dissolve.m */; };
+		73BDB4D315FE484400F7C1A3 /* Dim.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BDB4D215FE484400F7C1A3 /* Dim.m */; };
 		73C7A69615C8DF9000B5C812 /* FLSignInPanelEN.png in Resources */ = {isa = PBXBuildFile; fileRef = 73C7A69515C8DF9000B5C812 /* FLSignInPanelEN.png */; };
 		73C7A6B315C924CB00B5C812 /* TLAlarmSettingBackgroundEN.png in Resources */ = {isa = PBXBuildFile; fileRef = 73C7A6B115C924CB00B5C812 /* TLAlarmSettingBackgroundEN.png */; };
 		73C7A6B415C924CB00B5C812 /* TLAlarmSettingBackgroundCN.png in Resources */ = {isa = PBXBuildFile; fileRef = 73C7A6B215C924CB00B5C812 /* TLAlarmSettingBackgroundCN.png */; };
@@ -162,6 +162,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3576C59416318F3F00C32E89 /* BlurringEffectUN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BlurringEffectUN.png; path = "../../素材/newLULU/pngs/BlurringEffectUN.png"; sourceTree = "<group>"; };
 		35B258841628CF690027CB13 /* TLAlarmCancelSelectedEN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TLAlarmCancelSelectedEN.png; sourceTree = "<group>"; };
 		731190A51617894C00267CCF /* ArrowUN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArrowUN.png; sourceTree = "<group>"; };
 		731190A61617894C00267CCF /* ATapUN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ATapUN.png; sourceTree = "<group>"; };
@@ -245,7 +246,6 @@
 		7397458C15EB4A2300442FBB /* AutosizeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutosizeTableView.m; sourceTree = "<group>"; };
 		73ADB19F15E9DDE300F87A31 /* TLAddListButtonUN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TLAddListButtonUN.png; sourceTree = "<group>"; };
 		73ADD6AA160F497500A70F43 /* FLOriginalBackgroundUN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FLOriginalBackgroundUN.png; sourceTree = "<group>"; };
-		73ADD6AC160F4A3C00A70F43 /* TLBlurredBackUN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TLBlurredBackUN.png; sourceTree = "<group>"; };
 		73ADD6C6160FB3AC00A70F43 /* TLInfoButtonUN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TLInfoButtonUN.png; sourceTree = "<group>"; };
 		73ADD6DA160FE55F00A70F43 /* TapButton.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = TapButton.aif; sourceTree = "<group>"; };
 		73ADD6DE160FE74400A70F43 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -261,8 +261,8 @@
 		73ADD7021610209F00A70F43 /* TLNextDisabledUN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TLNextDisabledUN.png; sourceTree = "<group>"; };
 		73ADD7031610209F00A70F43 /* TLPrevUN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TLPrevUN.png; sourceTree = "<group>"; };
 		73ADD7041610209F00A70F43 /* TLPrevDisabledUN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TLPrevDisabledUN.png; sourceTree = "<group>"; };
-		73BDB4D115FE484400F7C1A3 /* dissolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dissolve.h; sourceTree = "<group>"; };
-		73BDB4D215FE484400F7C1A3 /* dissolve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dissolve.m; sourceTree = "<group>"; };
+		73BDB4D115FE484400F7C1A3 /* Dim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dim.h; sourceTree = "<group>"; };
+		73BDB4D215FE484400F7C1A3 /* Dim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dim.m; sourceTree = "<group>"; };
 		73C7A69515C8DF9000B5C812 /* FLSignInPanelEN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FLSignInPanelEN.png; sourceTree = "<group>"; };
 		73C7A6B115C924CB00B5C812 /* TLAlarmSettingBackgroundEN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TLAlarmSettingBackgroundEN.png; sourceTree = "<group>"; };
 		73C7A6B215C924CB00B5C812 /* TLAlarmSettingBackgroundCN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TLAlarmSettingBackgroundCN.png; sourceTree = "<group>"; };
@@ -360,6 +360,7 @@
 		35B2587F1628B2040027CB13 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				3576C59416318F3F00C32E89 /* BlurringEffectUN.png */,
 				73C7A66015C7940000B5C812 /* FirstLevel */,
 				35B258801628B20B0027CB13 /* Todolist */,
 			);
@@ -389,7 +390,6 @@
 				73ADB19F15E9DDE300F87A31 /* TLAddListButtonUN.png */,
 				737BD63415FEEBB90050ACA2 /* TLTitleEN.png */,
 				73ADD6C6160FB3AC00A70F43 /* TLInfoButtonUN.png */,
-				73ADD6AC160F4A3C00A70F43 /* TLBlurredBackUN.png */,
 			);
 			name = Todolist;
 			sourceTree = "<group>";
@@ -453,8 +453,8 @@
 				73862A0415C5890500DA07D1 /* CurlUp.m */,
 				737B2B3D15BA4A7700434961 /* FlipFromLeft.h */,
 				737B2B3E15BA4A7700434961 /* FlipFromLeft.m */,
-				73BDB4D115FE484400F7C1A3 /* dissolve.h */,
-				73BDB4D215FE484400F7C1A3 /* dissolve.m */,
+				73BDB4D115FE484400F7C1A3 /* Dim.h */,
+				73BDB4D215FE484400F7C1A3 /* Dim.m */,
 			);
 			name = DIYTransitions;
 			sourceTree = "<group>";
@@ -784,7 +784,6 @@
 				7316F35D1602FC7900D061F9 /* iconRetina.png in Resources */,
 				735B97D9160DF38E0082AF1F /* Default-568h@2x.png in Resources */,
 				73ADD6AB160F497500A70F43 /* FLOriginalBackgroundUN.png in Resources */,
-				73ADD6AD160F4A3C00A70F43 /* TLBlurredBackUN.png in Resources */,
 				73ADD6C7160FB3AC00A70F43 /* TLInfoButtonUN.png in Resources */,
 				73ADD6F9160FF27F00A70F43 /* pageturn.wav in Resources */,
 				73ADD6FB160FF60400A70F43 /* ViewOpen.wav in Resources */,
@@ -822,6 +821,7 @@
 				73D47D87161BCA4100023EB8 /* TLScrollToTopCN.png in Resources */,
 				73D47D95161BE1EC00023EB8 /* InputAccessoryViewForDetail.xib in Resources */,
 				35B258851628CF6A0027CB13 /* TLAlarmCancelSelectedEN.png in Resources */,
+				3576C59516318F3F00C32E89 /* BlurringEffectUN.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -884,7 +884,7 @@
 				73862A0C15C58C6300DA07D1 /* Todo.m in Sources */,
 				73862A1015C58C7300DA07D1 /* Todolist.m in Sources */,
 				7397458D15EB4A2300442FBB /* AutosizeTableView.m in Sources */,
-				73BDB4D315FE484400F7C1A3 /* dissolve.m in Sources */,
+				73BDB4D315FE484400F7C1A3 /* Dim.m in Sources */,
 				731190B016179C4B00267CCF /* Settings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

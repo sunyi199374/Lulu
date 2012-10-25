@@ -47,8 +47,11 @@
 - (void)addTodo:(NSString*)aEvent Order:(NSInteger) displayOrder;
 - (void)cancel;
 - (void)dismissView;
--(NSRange)findReturnInString:(NSString *)string withSelectedRange:(NSRange) selectedRange toTheEnd:(BOOL) to;
--(void)enableButton:(UIButton*)button enabled:(BOOL)enabled;
+- (NSRange)findReturnInString:(NSString *)string withSelectedRange:(NSRange) selectedRange toTheEnd:(BOOL) to;
+- (void)enableButton:(UIButton*)button enabled:(BOOL)enabled;
+- (void)initContentView;
+- (void)initTitleField;
+- (void)initSound;
 @end
 
 

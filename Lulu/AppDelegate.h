@@ -12,7 +12,7 @@
 @property (readonly,strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly,strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-@property (nonatomic,strong) id <AppDelegateDelegate> appDel;
+@property (nonatomic,strong) id <AppDelegateDelegate> appDelegate;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

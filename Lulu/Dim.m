@@ -1,8 +1,8 @@
 
 
-#import "dissolve.h"
+#import "Dim.h"
 
-@implementation dissolve
+@implementation Dim
 -(void)perform{
     //The new dissolve effect is disabled but is going to use a cover-view effect. The transition duration is reduced from .75 to .5
     //UIViewController *src = (UIViewController *)self.sourceViewController;

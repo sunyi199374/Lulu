@@ -26,11 +26,9 @@
 
 @interface TodoListController : UIViewController <UIGestureRecognizerDelegate,UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate,AddTodoDelegate,TodoListDetailDelegate>{
 }
-@property (retain, nonatomic) TodoListDetailController *childDetailController;
-@property (retain, nonatomic) AddTodoListController * childAddController;
+@property (strong, nonatomic) TodoListDetailController *childDetailController;
+@property (strong, nonatomic) AddTodoListController * childAddController;
 
-@property BOOL debugMode;
-@property BOOL firstTime;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) UIView *cover;
 @property (strong, nonatomic) FPPopoverController *popOver;
@@ -45,6 +43,9 @@
 @property CGPoint originalCenter;
 @property CGRect  frameDifference;
 @property CGPoint centerDifference;
+@property BOOL debugMode;
+@property BOOL firstTime;
+
 //search
 @property (strong, nonatomic) NSMutableArray *filteredLists;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -63,14 +64,36 @@
 @property (strong, nonatomic) IBOutlet UIImageView *arrowBottom;
 @property (strong, nonatomic) IBOutlet UIImageView *tapBottom;
 
-
+//pragma Table Data Source Methods
+//pragma Table Delegate Methods
+//pragma Todo List Support
+//pragma Segue
+//pragma Search Data Source
+//pragma Search Delegate Methods
 //pragma Gesture Recognizer Delegate Methods
 -(void)handlePinch:(UIPinchGestureRecognizer*) pinchRecognizer;
 
-//main
+//miscs
 -(void)newFilteredLists;
 -(void)updateFilteredLists:(NSString*)searchTerm;
 -(void)debug:(id)object orFunctionOrNil:(NSString*)function withItsStringOrNil: (NSString*)itsString;
 -(void)save:(NSManagedObject*)objectOrNil;
+-(void)updateBadgeNumber;
+-(void)popOver:(id)sender WithCreationDate:(NSDate *)dateCreated andFinishDate:(NSDate *)dateFinished andAlarm:(NSDate *)alarm;
+-(void)dismissView;
+-(void)newLists;
+-(void)initTableView;
+-(void)initContentView;
+-(void)initSearchView;
+-(void)initSound;
+-(void)initCover;
+-(void)prepareForReturnSegue;
+-(void)presentGuide;
+-(void)createTestTodoList;
+-(void)notFirstTime;
+
+//IBActions
+-(IBAction)add:(id)sender;
+-(IBAction)accessoryButtonTappedForRowWithIndexPath:(id)sender;
 
 @end

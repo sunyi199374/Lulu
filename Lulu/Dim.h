@@ -2,5 +2,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface dissolve : UIStoryboardSegue
+@interface Dim : UIStoryboardSegue
 @end

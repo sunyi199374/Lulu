@@ -24,15 +24,15 @@
 @property (strong, nonatomic) IBOutlet UIButton *secondApp;
 @property (strong, nonatomic) IBOutlet UIButton *thirdApp;
 @property (strong, nonatomic) IBOutlet UIButton *fourthApp;
-@property (strong, nonatomic) IBOutlet UIButton *signIn;
-@property (strong, nonatomic) IBOutlet UIImageView *lulutitle;
+@property (strong, nonatomic) IBOutlet UIButton *signInButton;
+@property (strong, nonatomic) IBOutlet UIImageView *luluTitle;
 @property (strong, nonatomic) IBOutlet UIView *reference;
 @property (strong, nonatomic) UIView *chosenApp;
 @property (strong, nonatomic) Settings *settings;
-@property BOOL firstTime;
+@property BOOL justStart;
+@property BOOL debugMode;
 
-//VIP service
-@property (strong, nonatomic) IBOutlet UIButton *VIPBtn;
+//account service
 @property (strong, nonatomic) IBOutlet UIImageView *banner;
 @property (strong, nonatomic) IBOutlet UITextField *password;
 //sound
@@ -47,17 +47,17 @@
 -(IBAction)appButtonTapped:(id)sender;
 -(IBAction)signInButtonTapped:(id)sender;
 -(IBAction)chooseApp:(id)sender;
-//set functions
--(void)setFirstApp;
--(void)setVIPBanner;
+-(IBAction)debugModeSwitch:(id)sender;
 //animation
--(void)showOrHideBanner;
--(void)showAnimationWithApp:(UIView*)app withDuration:(NSTimeInterval)duration andDirection:(NSInteger)direction;
--(void)showAnimationOfNewWindowAccordingToApp:(UIView*)appView;
--(void)hideAnimationAccordingToApp:(UIView *)appView;
--(void)hideRef;
+-(void)presentAppView:(UIView*)view withDuration:(NSTimeInterval)duration andDirection:(NSInteger)direction;
+-(void)showApp:(UIView*)appView;
+-(void)hideReference:(UIView *)appView;
+-(void)hideReference;
 //basics
--(void)confirmPassword;
--(void)getSettings;
+-(void)signIn;
+-(void)initSettings;
+-(void)initStarterView;
+-(void)initView;
+-(void)debug:(id)object orFunctionOrNil:(NSString*)function withItsStringOrNil: (NSString*)itsString;
 
 @end

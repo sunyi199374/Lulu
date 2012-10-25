@@ -7,7 +7,7 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
-@synthesize appDel;
+@synthesize appDelegate;
 
 # pragma mark -
 # pragma mark Applicaation Lifecycle
@@ -33,7 +33,7 @@
         NSDictionary* userInfo = notification.userInfo;
         NSString *origin = (NSString*)[userInfo objectForKey:@"origin"];
         if ([origin isEqualToString:@"todoListDetailController"]){
-            [self.appDel UpdateClockFromAppDelegate:self];
+            [self.appDelegate UpdateClockFromAppDelegate:self];
             NSLog(@"didReceiveLocalNotification is called,%@",origin);
         }
     }

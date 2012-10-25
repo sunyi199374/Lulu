@@ -44,10 +44,7 @@
 	[super viewWillAppear:animated];
 	
 	//set titleView text
-	titleView.delegate = self;
-	titleView.text = [NSString stringWithFormat:@"%@",self.todoList.title];
-	titleView.font = [self getFontTofitInRect:titleView.frame forText:titleView.text];
-	leftQuo.font = rightQuo.font = [UIFont fontWithName:@"GillSans-Bold" size:titleView.font.pointSize*2];
+	[self initTitle];
 	
 	self.view.alpha =1;
 	[self.delegate todoListDetailController:self updateParentCellAtIndexPath:parentCellIndexPath isDeleted:NO];
@@ -66,100 +63,19 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	//set alarm properties
-	[[NSBundle mainBundle]loadNibNamed:@"AlarmClockModal" owner:self options:nil];
-	datePicker.minimumDate = [NSDate date];
-	temperaryDate = nil;
-	alarmView.alpha = 0.0f;
-	
-	//set alarm button view
-	if (todoList.alarm){
-		[self createAlarmClock];
-		alarmClock.hidden = NO;
-	} else
-		alarmClock.hidden = YES;
-	
-	//set add todo text as well as the button
-	addingView.hidden = YES;
-	[addTodoBtn addTarget:self action:@selector(showAddingTextField) forControlEvents:UIControlEventTouchUpInside];
-	UITextField *textField = (UITextField*)[addingView viewWithTag:1000];
-	[textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-	addingMSG = textField.text;
-   
 	//set delete button action
 	[deleteList addTarget:self action:@selector(deleteTodoList) forControlEvents:UIControlEventTouchUpInside];
 	
-	//set table view properties
-	[self sortTodos];
-	self.tableView.delegate = self;
-	self.tableView.dataSource = self;
-	self.tableView.backgroundColor = [UIColor clearColor];
-	[self.tableView reloadData];
-	[self.tableView layoutIfNeeded];
-	CGRect newFrame = self.tableView.frame;
-	newFrame.size.height = [self.tableView contentSize].height;
-	self.tableView.frame = newFrame;
+	[self initScrollView];
+	[self initTableView];
+	[self initAlarm];
+	[self initAddingView];
+	[self presentGuide];
 	
-	//set scroll view properties
-	self.scrollView.canCancelContentTouches = NO;
-	self.scrollView.layer.cornerRadius = 22.0f;
-	[self resizeScrollView];
-	self.scrollView.delegate = self;
-	self.pullView.alpha = 0;
-	
-	//set title view properties
-	titleView.backgroundColor = [UIColor clearColor];
-	titleView.textColor = leftQuo.textColor = rightQuo.textColor = kTitleColor;
-	
-	//sound
-	NSURL *closeSound   = [[NSBundle mainBundle] URLForResource: @"ViewClose"
-																 withExtension: @"aif"];
-	// Store the URL as a CFURLRef instance
-	self.soundFileURLRef = (__bridge CFURLRef) closeSound;
-	// Create a system sound object representing the sound file.
-	AudioServicesCreateSystemSoundID (soundFileURLRef, &closeFileObject);
-	
-	NSURL *deleteSound   = [[NSBundle mainBundle] URLForResource: @"Delete"
-                                                  withExtension: @"aif"];
-	// Store the URL as a CFURLRef instance
-	self.soundFileURLRef = (__bridge CFURLRef) deleteSound;
-	// Create a system sound object representing the sound file.
-	AudioServicesCreateSystemSoundID (soundFileURLRef, &deleteFileObject);
-	
-	//first time show, show guide
-	if (settings.firstTimeShowInDetailsView.boolValue){
-		guideView.hidden = NO;
-		CGRect frame = arrow.frame;
-		
-		[UIView beginAnimations:nil context:NULL];
-		[UIView setAnimationRepeatCount:2];
-		[UIView setAnimationCurve:UIViewAnimationCurveLinear];
-		[UIView setAnimationDuration:.6];
-		CGRect newFrame = frame;
-		newFrame.size.height = 0;
-		arrow.frame = newFrame;
-		arrow.frame = frame;
-		[UIView commitAnimations];
-		
-		UITapGestureRecognizer *recog = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(notFirstTime)];
-		recog.numberOfTapsRequired = 1;
-		[guideView addGestureRecognizer:recog];
-	}else{
-		guideView.hidden =YES;
-	}
-	
-	((AppDelegate*)[[UIApplication sharedApplication]delegate]).appDel = self;
+	((AppDelegate*)[[UIApplication sharedApplication]delegate]).appDelegate = self;
 	
 	//image support
 	//[[NSBundle mainBundle] loadNibNamed:@"inputAccessoryViewForDetail" owner:self options:nil];
-}
-
--(void)notFirstTime{
-	settings.firstTimeShowInDetailsView = [NSNumber numberWithBool:NO];
-	guideView.hidden = YES;
-	[self save:settings];
-	
-	[guideView removeGestureRecognizer:[[guideView gestureRecognizers]objectAtIndex:0]];
 }
 
 - (void)viewDidUnload
@@ -956,6 +872,99 @@ withItsStringOrNil:[NSString stringWithFormat:@"The cell has width %f, height%f,
 	
 }
 
+-(void)initScrollView{
+	self.scrollView.canCancelContentTouches = NO;
+	self.scrollView.layer.cornerRadius = 22.0f;
+	[self resizeScrollView];
+	self.scrollView.delegate = self;
+	self.pullView.alpha = 0;
+}
+
+-(void)initTitle{
+	titleView.delegate = self;
+	titleView.text = [NSString stringWithFormat:@"%@",self.todoList.title];
+	titleView.font = [self getFontTofitInRect:titleView.frame forText:titleView.text];
+	leftQuo.font = rightQuo.font = [UIFont fontWithName:@"GillSans-Bold" size:titleView.font.pointSize*2];
+	titleView.backgroundColor = [UIColor clearColor];
+	titleView.textColor = leftQuo.textColor = rightQuo.textColor = kTitleColor;
+}
+
+-(void)initTableView{
+	[self sortTodos];
+	self.tableView.backgroundColor = [UIColor clearColor];
+	[self.tableView reloadData];
+	[self.tableView layoutIfNeeded];
+	CGRect newFrame = self.tableView.frame;
+	newFrame.size.height = [self.tableView contentSize].height;
+	self.tableView.frame = newFrame;
+}
+
+-(void)initAlarm{
+	[[NSBundle mainBundle]loadNibNamed:@"AlarmClockModal" owner:self options:nil];
+	datePicker.minimumDate = [NSDate date];
+	temperaryDate = nil;
+	alarmView.alpha = 0.0f;
+	if (todoList.alarm){
+		[self createAlarmClock];
+		alarmClock.hidden = NO;
+	} else
+		alarmClock.hidden = YES;
+}
+
+-(void)initAddingView{
+	addingView.hidden = YES;
+	[addTodoBtn addTarget:self action:@selector(showAddingTextField) forControlEvents:UIControlEventTouchUpInside];
+	UITextField *textField = (UITextField*)[addingView viewWithTag:1000];
+	[textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+	addingMSG = textField.text;
+}
+
+-(void)initSound{
+	NSURL *closeSound   = [[NSBundle mainBundle] URLForResource: @"ViewClose"
+																 withExtension: @"aif"];
+	// Store the URL as a CFURLRef instance
+	self.soundFileURLRef = (__bridge CFURLRef) closeSound;
+	// Create a system sound object representing the sound file.
+	AudioServicesCreateSystemSoundID (soundFileURLRef, &closeFileObject);
+	
+	NSURL *deleteSound   = [[NSBundle mainBundle] URLForResource: @"Delete"
+                                                  withExtension: @"aif"];
+	// Store the URL as a CFURLRef instance
+	self.soundFileURLRef = (__bridge CFURLRef) deleteSound;
+	// Create a system sound object representing the sound file.
+	AudioServicesCreateSystemSoundID (soundFileURLRef, &deleteFileObject);
+}
+
+-(void)presentGuide{
+	if (settings.firstTimeShowInDetailsView.boolValue){
+		guideView.hidden = NO;
+		CGRect frame = arrow.frame;
+		
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationRepeatCount:2];
+		[UIView setAnimationCurve:UIViewAnimationCurveLinear];
+		[UIView setAnimationDuration:.6];
+		CGRect newFrame = frame;
+		newFrame.size.height = 0;
+		arrow.frame = newFrame;
+		arrow.frame = frame;
+		[UIView commitAnimations];
+		
+		UITapGestureRecognizer *recog = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(notFirstTime)];
+		recog.numberOfTapsRequired = 1;
+		[guideView addGestureRecognizer:recog];
+	}else{
+		guideView.hidden =YES;
+	}
+}
+
+-(void)notFirstTime{
+	settings.firstTimeShowInDetailsView = [NSNumber numberWithBool:NO];
+	guideView.hidden = YES;
+	[self save:settings];
+	
+	[guideView removeGestureRecognizer:[[guideView gestureRecognizers]objectAtIndex:0]];
+}
 
 #pragma Alarm Clock Support
 -(void)addNewAlarm{
